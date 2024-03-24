@@ -37,7 +37,7 @@ jobs:
   deploy:
     name: Deploy
     needs: build
-    runs-on: unbutu-latest
+    runs-on: unbuntu-latest
     if: github.ref == 'refs/heads/main'
 
     steps:
