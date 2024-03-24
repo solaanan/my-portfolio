@@ -1,5 +1,5 @@
 name: build-and-deploy
-run-name: ${{github.event.pusher.email}}:${{github.event.head_coommit}}
+run-name: ${{github.event.pusher.email}}:${{github.event.head_coommit.id}}
 on:
   push:
     branches:
@@ -37,7 +37,7 @@ jobs:
   deploy:
     name: Deploy
     needs: build
-    runs-on: unbuntu-latest
+    runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
 
     steps:
