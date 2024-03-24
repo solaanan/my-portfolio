@@ -1,5 +1,5 @@
 name: build-and-deploy
-run-name: ${{ github.event.pusher.username }}:${{ github.event.commit_head }}
+run-name: ${{github.event.pusher.email}}:${{github.event.head_coommit}}
 on:
   push:
     branches:
@@ -25,7 +25,7 @@ jobs:
       - name: Build production bundle
         uses: borales/actions-yarn@v4
         with:
-          cmd: build:prod
+          cmd: build
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v4
