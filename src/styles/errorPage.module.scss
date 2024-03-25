@@ -8,10 +8,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  // flex-wrap: wrap;
+
+  .logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
 
   .emojisPart {
     width: 20%;
-    height: 100%;
+    min-width: 150px;
+    // height: 100%;
     min-height: 200px;
     flex-shrink: 0;
     position: relative;
