@@ -1,0 +1,16 @@
+{
+	"404": {
+		"errorTitle": "Not Found",
+		"emoji": "🤷🏻‍♂️"
+	},
+	"401": {
+		"errorTitle": "Unauthorized",
+		"errorCode": 401,
+		"emoji": "🚫"
+	},
+	"503": {
+		"errorTitle": "Service Unavailable",
+		"errorMessage": "Our service is undergoing maintenance for essential upgrades. We apologize for any inconvenience and appreciate your patience.",
+		"emoji": "😓"
+	}
+}

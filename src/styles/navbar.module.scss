@@ -1,0 +1,102 @@
+@import 'globals';
+
+.navbar {
+	height: $navbar_height;
+	padding: 0 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 50px;
+
+	&_left, &_right {
+		flex-grow: 1;
+		display: flex;
+		gap: 50px;
+		height: calc(100% - 40px);
+	}
+
+	&_left {
+		justify-content: flex-end;
+		
+		.navbar_entry {
+			animation: entry_left_animation .5s ease  .3s forwards;
+		}
+	}
+	&_right {
+		justify-content: flex-start;
+
+		.navbar_entry {
+			animation: entry_right_animation .5s ease .3s forwards;
+		}
+	}
+
+	&_logo {
+		animation: logo_animation .5s ease forwards;
+	}
+
+	&_entry {
+		text-transform: uppercase;
+		font-size: 2em;
+		opacity: 0;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		
+		a {
+			color: $text;
+			text-decoration: none;
+			padding: 0 20px;
+			height: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: all .5s ease;
+			background: linear-gradient(to bottom, $secondary, rgba(0, 0, 0, 0));
+			background-size: 100% 200%;
+			background-repeat: no-repeat;
+			background-position: 0 220%;
+			border-radius: 20px;
+		}
+
+		a:hover {
+			background-position: 0 150%;
+		}
+	}
+}
+
+/**
+ * Animations
+ */
+@keyframes logo_animation {
+	0% {
+		opacity: 0;
+		transform: translateY(-100%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes entry_left_animation {
+	0% {
+		opacity: 0;
+		transform: translateX(100%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes entry_right_animation {
+	0% {
+		opacity: 0;
+		transform: translateX(-100%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
