@@ -1,5 +1,5 @@
 @import "variables";
-@import url('https://fonts.googleapis.com/css2?family=Jockey+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Jockey+One&display=swap");
 
 body {
   font-family: "Jockey One", sans-serif;
@@ -11,4 +11,18 @@ body {
 
 html {
   font-size: 10px;
+}
+
+.heading {
+  font-size: 13rem;
+  color: $primary;
+  text-transform: uppercase;
+  max-width: 12rem;
+  line-height: 100%;
+}
+
+.lead {
+  font-size: 3rem;
+  color: $text;
+  line-height: 125%;
 }

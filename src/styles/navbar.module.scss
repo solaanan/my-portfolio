@@ -59,8 +59,8 @@
 			border-radius: 20px;
 		}
 
-		a:hover {
-			background-position: 0 150%;
+		a:hover, &_selected a {
+			background-position: 0 150% !important;
 		}
 	}
 }

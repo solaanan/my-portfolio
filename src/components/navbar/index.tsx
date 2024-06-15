@@ -2,7 +2,8 @@ import { divideEntries } from "src/helpers/utils";
 import { NavbarProps } from "./types";
 import Logo from "/src/assets/images/logo.svg?react";
 import styles from "src/styles/navbar.module.scss";
-import { Link } from "react-router-dom";
+import { Link, matchPath, useLocation } from "react-router-dom";
+import classNames from "classnames";
 
 const navbarEntries = [
   {
@@ -26,11 +27,16 @@ const navbarEntries = [
 const [leftEntries, rightEntries] = divideEntries(navbarEntries);
 
 const Navbar = ({}: NavbarProps) => {
+  const location = useLocation();
+
+  console.log(matchPath("/about", location.pathname))
   return (
     <div className={styles.navbar}>
       <div className={styles.navbar_left}>
         {leftEntries.map((entry) => (
-          <div key={entry.path} className={styles.navbar_entry}>
+          <div key={entry.path} className={classNames(styles.navbar_entry, {
+            [styles.navbar_entry_selected]: matchPath(entry.path, location.pathname)
+          })}>
             <Link to={entry.path}>{entry.label}</Link>
           </div>
         ))}
@@ -42,7 +48,9 @@ const Navbar = ({}: NavbarProps) => {
       </div>
       <div className={styles.navbar_right}>
         {rightEntries.map((entry) => (
-          <div key={entry.path} className={styles.navbar_entry}>
+          <div key={entry.path} className={classNames(styles.navbar_entry, {
+            [styles.navbar_entry_selected]: matchPath(entry.path, location.pathname)
+          })}>
             <Link to={entry.path}>{entry.label}</Link>
           </div>
         ))}

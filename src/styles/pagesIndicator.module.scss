@@ -1,0 +1,73 @@
+@import "globals";
+
+.container {
+	position: fixed;
+	bottom: 2rem;
+	right: 2rem;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	min-height: 5rem;
+
+	.bullet {
+		width: 4rem;
+		height: 2.5rem;
+		flex-shrink: 0;
+		border-radius: 20px;
+		background: lighten($primary, 20);
+		transition: all .2s ease;
+		overflow: hidden;
+
+		* {
+			display: none;
+		}
+
+		&:hover {
+			width: unset !important;
+			height: unset !important;
+			display: flex;
+			padding: .2rem 2rem;
+			justify-content: center;
+			align-items: center;
+			gap: 10px;
+			color: $white;
+			font-size: 2rem;
+			font-style: normal;
+			font-weight: 400;
+			line-height: normal;
+			text-transform: uppercase;
+
+			* {
+				display: unset !important;
+				text-decoration: none;
+				color: $primary;
+			}
+		}
+	}
+
+	.selectedBullet {
+		&, &:hover {
+			width: unset !important;
+			height: unset !important;
+			display: flex !important;
+			padding: .2rem 4rem !important;
+			justify-content: center !important;
+			align-items: center !important;
+			// gap: 10px !important;
+			border-radius: 2rem !important;
+			background: $primary !important;
+			color: $white !important;
+			font-size: 2.5rem !important;
+			font-style: normal !important;
+			font-weight: 400 !important;
+			line-height: normal !important;
+			text-transform: uppercase !important;
+	
+			* {
+				display: unset !important;
+				text-decoration: none !important;
+				color: $white !important;
+			}
+		}
+	}
+}

@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom"
-import { EnvIndicator, Navbar } from "src/components"
+import { EnvIndicator, Navbar, PagesIndicator } from "src/components"
 
 const Root = () => {
 	return (
@@ -7,6 +7,7 @@ const Root = () => {
 			<EnvIndicator />
 			<Navbar />
 			<Outlet />
+			<PagesIndicator />
 		</div>
 	)
 }

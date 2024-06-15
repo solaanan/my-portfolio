@@ -23,3 +23,7 @@ export const divideEntries = <T>(entries: T[]) => {
     entries.slice(halfLength),
   ];
 }
+
+export const getVariableName = (variable : {[key : string]: any}) => {
+	return Object.keys(variable)[0];
+}
